@@ -1,0 +1,24 @@
+apiVersion: v2
+name: embedded-toolbox
+version: 0.0.1
+dependencies:
+- name: argo-cd
+  version: 3.2.2
+  repository: https://argoproj.github.io/argo-helm
+- name: sealed-secrets
+  version: 3.2.2
+  repository: https://bitnami-labs.github.io/sealed-secrets
+
+#- name: crops
+#  version: 0.0.1
+#  repository: https://mr-sour.github.io/crops-helm
+#- name: lava-server
+#  version: 0.0.1
+#  repository: https://mr-sour.github.io/lava-server-helm
+#- name: lava-worker
+#  version: 0.0.1
+#  repository: https://mr-sour.github.io/lava-worker-helm
+
+
+
+

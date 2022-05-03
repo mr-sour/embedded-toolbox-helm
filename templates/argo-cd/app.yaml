@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  project: argocd
+  source:
+    path: .
+    repoURL: 'git@github.com:mr-sour/embedded-toolbox-helm.git'
+    targetRevision: HEAD
+    helm:
+      releaseName: argo
+  syncPolicy: {}
