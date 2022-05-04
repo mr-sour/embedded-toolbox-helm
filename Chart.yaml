@@ -8,12 +8,9 @@ dependencies:
 - name: sealed-secrets
   version: 2.1.7
   repository: https://bitnami-labs.github.io/sealed-secrets
-- name: tekton
+- name: tekton-ci
   version: 0.29.0
   repository: https://cdfoundation.github.io/tekton-helm-chart/
-
-
-
 
 #- name: crops
 #  version: 0.0.1
@@ -25,6 +22,8 @@ dependencies:
 #  version: 0.0.1
 #  repository: https://mr-sour.github.io/lava-worker-helm
 
-
+#- name: qr-proxy
+#  version: 0.0.1
+#  repository: https://mr-sour.github.io/iot-qr-proxy
 
 
