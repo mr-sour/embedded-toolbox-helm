@@ -1,14 +1,16 @@
 # embedded-toolbox-helm
 For development of my personal connected home. Powered by kubernetes.
-
-1.) bootstrap k8s on laptop using distro of choice
-
+# install k3s
+1.) `curl -sfL https://get.k3s.io | sh -`
+# clone repo
 2.) `git clone https://github.com/mr-sour/embedded-toolbox-helm.git`
-
+# cd 
 3.) `cd ./embedded-toolbox-helm`
-
-4.) `helm install argo ./ `
-
+# download dependencys
+5.) `helm dependency update`
+# bootstrap cluster
+4.) `helm install argo ./`
+# 
 5.) todo: login to argo
 
 This instance of argo-cd will require updates to the image every now and again. https://github.com/argoproj/argo-cd/releases 
