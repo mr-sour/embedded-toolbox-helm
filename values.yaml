@@ -55,11 +55,6 @@ argo-cd:
           - Backup
           clusters:
           - "*"
-      dex.config: |
-        logger:
-          level: debug
-          format: json
-        connectors:
       repository.credentials: |
         - sshPrivateKeySecret:
             key: ci-user
