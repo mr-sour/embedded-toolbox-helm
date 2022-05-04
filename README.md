@@ -1,14 +1,17 @@
 # embedded-toolbox-helm
 For development of my personal connected home. Powered by kubernetes.
-# install k3s
-1.) `curl -sfL https://get.k3s.io | sh -`
-# clone repo
+tested on fedora 35 but should work on other distrobutions
+#### install minikube
+1.) `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm`
+2.) `sudo kubectl config view --raw > ~/.kube/config`
+3.) `sudo chmod 644 /etc/rancher/k3s/k3s.yaml`
+#### clone repo
 2.) `git clone https://github.com/mr-sour/embedded-toolbox-helm.git`
 # cd 
 3.) `cd ./embedded-toolbox-helm`
-# download dependencys
+#### download dependencys
 5.) `helm dependency update`
-# bootstrap cluster
+#### bootstrap cluster
 4.) `helm install argo ./`
 # 
 5.) todo: login to argo
