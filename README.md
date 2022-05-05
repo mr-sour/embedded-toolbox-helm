@@ -19,6 +19,13 @@ tested on fedora 35 but should work anywhere argocd will depoy (helm required)
 #### goto localhost:8080
 user:admin pw:xxxxx
 
+#### make ssh secret for argocd
+`ssh-keygen -t ed25519 `
+`kubectl create secret generic ssh-keys --from-file=id_ed25519=/home/YOUR_USERNAME/.ssh/id_ed25519 --from-file=id_ed25519.pub=/home/YOUR_USERNAME/.ssh/id_ed25519.pub`
+
+
+
+
 
 This instance of argo-cd will require updates to the image every now and again. https://github.com/argoproj/argo-cd/releases 
 

@@ -92,8 +92,8 @@ argo-cd:
           - "*"
       repository.credentials: |
         - sshPrivateKeySecret:
-            key: ci-user
-            name: ci-user-github
+            key: id_ed25519
+            name: ssh-keys
           url: git@github.com:mr-sour
       repositories: |
         - type: helm
