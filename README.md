@@ -11,7 +11,7 @@ tested on fedora 35 but should work anywhere argocd will depoy (helm required)
 #### download dependencys
 `helm dependency update`
 #### bootstrap cluster
-`helm upgrade --install argo ./`
+`helm upgrade --install argo ./ -n argocd --create-namespace`
 #### portforward for local access
 `kubectl port-forward svc/argocd-server 8080:443`
 #### get inital admin password
