@@ -1,3 +1,28 @@
+environments:
+  - name: toolbox-local
+    servers:
+      - https://kubernetes.default.svc
+    appRepo: "git@github.com:mr-sour/embedded-toolbox-helm.git"
+    appPath: "environments/lowers"
+    sourceRepos:
+      - "git@github.com:mr-sour/embedded-toolbox-helm.git"
+
+#  - name: toolbox-remote-GCP
+#    servers:
+#      - 
+#    appRepo: "git@github.com:mr-sour/embedded-toolbox-helm.git"
+#    appPath: "environments/lowers"
+#    sourceRepos:
+#      - "git@github.com:mr-sour/embedded-toolbox-helm.git"
+    
+#  - name: toolbox-remote-HETZNER
+#    servers:
+#      - 
+#    appRepo: "git@github.com:mr-sour/embedded-toolbox-helm.git"
+#    appPath: "environments/lowers"
+#    sourceRepos:
+#      - "git@github.com:mr-sour/embedded-toolbox-helm.git"
+
 argo-cd:
   dex:
     enabled: false
