@@ -8,9 +8,9 @@ spec:
     - group: '*'
       kind: '*'
   destinations:
-    - namespace: argocd
+    - namespace: 'argocd'
       server: 'https://kubernetes.default.svc'
   orphanedResources:
     warn: true
   sourceRepos:
-    - 'git@github.com:PeopleNet/embedded-toolbox-helm.git'
+    - 'git@github.com:mr-sour/embedded-toolbox-helm.git'

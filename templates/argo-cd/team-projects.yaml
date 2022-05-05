@@ -3,12 +3,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: {{ .name }}
+  name: {{ .name }}-apps
   namespace: argocd
 spec:
   clusterResourceWhitelist:
     - group: '*'
-      kind: '*'
+      kind: 'Application'
   destinations:
 {{- range .servers }}
     - namespace: '*'
@@ -41,22 +41,10 @@ spec:
     targetRevision: HEAD
   syncPolicy: {}
 ---
----
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: {{ .name }}-apps
-  namespace: argocd
-spec:
-  clusterResourceWhitelist:
-    - group: '*'
-      kind: 'Application'
-  destinations:
-    - namespace: 'argocd'
-      server: 'https://kubernetes.default.svc'
-  orphanedResources:
-    warn: true
-  sourceRepos:
-    - {{ .appRepo }}
----
 {{- end }}
+
+
+
+
+
+
