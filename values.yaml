@@ -7,7 +7,6 @@ environments:
     sourceRepos:
       - "git@github.com:mr-sour/embedded-toolbox-helm.git"
 
-environments:
   - name: tekton-pipeline
     servers:
       - https://kubernetes.default.svc
