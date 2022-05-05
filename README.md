@@ -1,20 +1,24 @@
 # embedded-toolbox-helm
-For development of my personal connected home. Powered by kubernetes.
-tested on fedora 35 but should work on other distrobutions
-#### install minikube
-1.) `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm`
-2.) `sudo kubectl config view --raw > ~/.kube/config`
-3.) `sudo chmod 644 /etc/rancher/k3s/k3s.yaml`
+For development of my personal connected home. Powered by kubernetes, yocto , labgrid, tekton
+tested on fedora 35 but should work anywhere argocd will depoy (helm required)
+#### install k3s 
+`sudo kubectl config view --raw > ~/.kube/config`
+`sudo chmod 644 /etc/rancher/k3s/k3s.yaml`
 #### clone repo
-2.) `git clone https://github.com/mr-sour/embedded-toolbox-helm.git`
+`git clone https://github.com/mr-sour/embedded-toolbox-helm.git`
 # cd 
-3.) `cd ./embedded-toolbox-helm`
+`cd ./embedded-toolbox-helm`
 #### download dependencys
-5.) `helm dependency update`
+`helm dependency update`
 #### bootstrap cluster
-4.) `helm install argo ./`
-# 
-5.) todo: login to argo
+`helm upgrade --install argo ./`
+#### portforward for local access
+`kubectl port-forward svc/argocd-server 8080:443`
+#### get inital admin password
+`kubectl  get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`
+#### goto localhost:8080
+user:admin pw:xxxxx
+
 
 This instance of argo-cd will require updates to the image every now and again. https://github.com/argoproj/argo-cd/releases 
 
