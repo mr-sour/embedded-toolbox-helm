@@ -92,7 +92,7 @@ argo-cd:
           - "*"
       repository.credentials: |
         - sshPrivateKeySecret:
-            key: id_ed25519
+            key: 
             name: ssh-keys
           url: git@github.com:mr-sour
       repositories: |
