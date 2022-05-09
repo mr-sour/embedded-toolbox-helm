@@ -23,10 +23,8 @@ https://www.talos.dev/v1.0/introduction/quickstart/
 `kubectl port-forward svc/argocd-server 8080:443`
 #### goto localhost:8080
 user:admin pw:xxxxx
-
-setup terminal
-sudo screen /dev/ttyUSB0 115200
-press button to get into uboot
+#### setup terminal (press button to get into uboot)
+`sudo screen /dev/ttyUSB0 115200`
 
 todo (uboot config to yaml)
 
