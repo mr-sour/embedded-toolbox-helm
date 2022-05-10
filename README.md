@@ -1,4 +1,4 @@
-# embedded-toolbox-helm
+$USER# embedded-toolbox-helm
 For development of my personal connected home. Powered by kubernetes, yocto , labgrid, tekton
 tested on fedora 35 but should work anywhere kubernetes will depoy (helm required)
 #### bootstrap kubernetes cluster
@@ -15,12 +15,12 @@ https://www.talos.dev/v1.0/introduction/quickstart/
 `helm upgrade --install argo ./ -n argocd --create-namespace`
 #### make ssh secret for argocd
 `ssh-keygen -t ed25519 `
-#### upload public key to repository of chosing
-`kubectl create secret generic ssh-keys --from-file=id=/home/YOUR_USERNAME/.ssh/id_ed25519 --from-file=id_pub=/home/YOUR_USERNAME/.ssh/id_ed25519.pub`
+#### upload public key to servers of choosing. 
+`kubectl create secret generic ssh-keys -n argocd --from-file=id=/home/$USER/.ssh/id_ed25519 --from-file=id_pub=/home/$USER/.ssh/id_ed25519.pub` 
 #### get inital admin password
-`kubectl  get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`
+`kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d; echo`
 #### portforward for local access
-`kubectl port-forward svc/argocd-server 8080:443`
+`kubectl port-forward svc/argo-argocd-server -n argocd 8080:443`
 #### goto localhost:8080
 user:admin pw:xxxxx
 #### setup terminal (press button to get into uboot)
