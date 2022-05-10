@@ -1,0 +1,44 @@
+{{- range .Values.environments }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ .name }}
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: 'Application'
+  destinations:
+{{- range .servers }}
+    - namespace: '*'
+      server: {{ . }}
+{{ end }}
+  orphanedResources:
+    warn: true
+  sourceRepos:
+    {{- range $repo := .sourceRepos}}
+      - {{ $repo }}
+    {{- end }}
+---
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .name }}
+  namespace: argocd
+  labels:
+    app.env: {{ (split "-" .name)._1 }}
+    app.group: {{ (split "-" .name)._0 }}
+spec:
+  destination:
+    namespace: {{ .name }}
+    server: 'https://kubernetes.default.svc'
+  project: {{ .name }}
+  source:
+    path: {{ .appPath }}
+    repoURL: {{ .appRepo }}
+    targetRevision: HEAD
+  syncPolicy: {}
+---
+{{- end }}
