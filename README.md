@@ -1,4 +1,4 @@
-$USER# embedded-toolbox-helm
+# embedded-toolbox-helm
 For development of my personal connected home. Powered by kubernetes, yocto , labgrid, tekton
 tested on fedora 35 but should work anywhere kubernetes will depoy (helm required)
 #### bootstrap kubernetes cluster
@@ -7,7 +7,7 @@ https://www.talos.dev/v1.0/introduction/quickstart/
 
 #### clone repo
 `git clone https://github.com/mr-sour/embedded-toolbox-helm.git`
-# cd 
+#### cd 
 `cd ./embedded-toolbox-helm`
 #### download dependencys
 `helm dependency update`
