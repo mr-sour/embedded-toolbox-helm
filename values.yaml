@@ -10,10 +10,10 @@ environments:
   - name: tekton-pipeline
     servers:
       - https://kubernetes.default.svc
-    appRepo: "git@github.com:mr-sour/embedded-toolbox-helm.git"
+    appRepo: "ssh://git@github.com:mr-sour/embedded-toolbox-helm.git"
     appPath: "embedded-toolbox/tekton"
     sourceRepos:
-      - "git@github.com:mr-sour/embedded-toolbox-helm.git"
+      - "ssh://git@github.com:mr-sour/embedded-toolbox-helm.git"
 
 #  - name: toolbox-local.vim3
 #    servers:
