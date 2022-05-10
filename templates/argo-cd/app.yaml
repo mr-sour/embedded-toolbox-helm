@@ -10,7 +10,7 @@ spec:
   project: argocd
   source:
     path: .
-    repoURL: 'git@github.com:mr-sour/embedded-toolbox-helm.git'
+    repoURL: 'ssh://git@github.com:mr-sour/embedded-toolbox-helm.git'
     targetRevision: HEAD
     helm:
       releaseName: argo
